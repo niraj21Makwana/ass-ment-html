@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.headpart{
+    width:100%;
+    height: auto;
+    background-color: bisque;
+
+}
+.container{
+    background-color: darksalmon;
+     margin: 0 10% 0 10%;
+     width: 80%;
+     display: flex;
+     flex-wrap: wrap;
+ }
+ 
+@media (max-width:750px) {
+    .container{
+        background-color: darksalmon;
+         margin: 0 5% 0 5%;
+         width: 90%;
+         display: flex;
+         flex-wrap: wrap;
+     }
+}
+
+.heading{
+    position: relative;
+    /* margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30%; */
+    margin: 10px 0 10px 30%;
+    width:40%;
+    height: auto;
+    background-color: bisque;;
+    text-align: center;
+    border: 2px dotted black;
+    border-radius: 20px;
+    flex-wrap: wrap;
+}
+@media (max-width:750px) {
+    .heading{
+        position: relative;
+        margin: 10px 0 10px 5%;
+        width:90%;
+        height: auto;
+        text-align: center;
+        flex-wrap: wrap;
+        font-size: 2.1em;
+    }
+}
+.secandpart{
+    width:100%;
+    height:auto;
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cardfirst{
+    flex-basis: 27%;
+    background-color: bisque;
+    margin: 2%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column; 
+    /* border: 1px solid rgb(238, 236, 236);
+    box-shadow: 1px 1px 10px  black; */
+    border-radius: 2%;
+    padding: 10px;
+}
+.card-heading{
+    color: black;
+    /* background-color: azure; */
+    font-size: 2.5em;
+}
+.card-input{
+    /* width:100%; */
+    height: 50px;
+    margin: 10px 0 10px 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+.card-button{
+    width: 40%;
+    height: 30%;
+    margin: 10px 0px 10px 30%;
+    padding: 10px;
+    color: brown;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 20px;
+    background-color: cornsilk;
+    cursor:pointer; 
+}
+.card-result{
+    /* background-color: azure; */
+    margin: 10px 0 10px 0;
+    font-size: 1.5em;
+}
+
+@media (max-width:750px) {
+    .cardfirst{
+        flex-basis: 100%;
+        height: 300px;
+        background-color: bisque;
+        margin: 2%;
+        max-width: 720px;
+        display: flex;
+        flex-direction: column; 
+        border-radius: 2%;
+        padding: 10px;
+    }
+    .card-input{
+        /* width:100%; */
+        height: 70px;
+        margin: 10px 0 10px 0;
+        text-align: center;
+        font-size: 2.2em;
+    }
+    .card-button{
+        color: brown;
+        text-align: center;
+        font-size: 2.2em;
+        border-radius: 20px;
+        background-color: cornsilk;
+        cursor:pointer; 
+    }
+    .card-result{
+        margin: 10px 0 10px 0;
+        font-size: 1.9em;
+    }
+}

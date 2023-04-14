@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ass-style.css">
+</head>
+
+<body>
+<div class="headpart">
+    <div class="container">
+        <div class="heading">
+            <h1>ASSIGNMENT 1</h1>
+        </div>
+    </div>
+</div>
+<div class="secandpart">
+    <div class="container">
+        <div class="cardfirst">
+            <h3 class="card-heading">Find the cube</h3>
+            <input type="text" id="myValue" placeholder="Enter The Number" class="card-input">
+            <button type="button" onclick="findCube()" class="card-button">Find Cube</button>
+            <h4 class="card-result">Result : <p id="resultcube"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">Incremented</h3>
+            <input type="text" id="forIncrement" placeholder="Enter The Number" class="card-input">
+            <button type="button" onclick="incrementValue()" class="card-button">Increment</button>
+            <h4 class="card-result">Result : <p id="resultIncrement"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">Pallindrom</h3>
+            <input type="text" id="pallindromValue" placeholder="Enter The Number" class="card-input">
+            <button type="button" onclick="pallindrom()" class="card-button">Pallindrom</button>
+            <h4 class="card-result">Result : <p id="resultpallindrom"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">Frequency</h3>
+            <h4 class="card-result">Result : <p id="resultFrequency"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">Function Under a Function</h3>
+            <h4 class="card-result">Result :<p id="resultfunction"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading"> use 'This' Function</h3>
+            <h4 class="card-result">Result : <p id="resultThis"></p></h4>
+        </div>
+    </div>
+</div> 
+
+<!-- 
+        <h3>Question 2 create a button on clicking which its value is incremented by one using const and try to reassign the value.</h3>
+        <input type="text" id="forIncrement" placeholder="Enter the number For increment">
+        <button type="button" >Incremented</button>
+
+        <h3>Question 3 check given string is pallindrom or not using var.</h3>
+        <input type="text" id="pallindromValue" placeholder="Enter the number For increment">
+        <button type="button" onclick="pallindrom()">pallindrom</button>
+
+
+        <p id="result"></p> -->
+
+    </div>
+</body>
+
+<script>
+      
+    findCube = ()=> {
+        let x = document.getElementById("myValue").value;
+        y = x*x*x;
+        document.getElementById("resultcube").innerHTML = y;
+    }
+
+    incrementValue = ()=> {
+        const a = document.getElementById("forIncrement").value;
+        //console.log(a);
+        let x = a;
+        const y = ++x;
+       // console.log(y);
+        document.getElementById("resultIncrement").innerHTML = y;
+    }
+
+    pallindrom = ()=> {
+     var tempValue,sum = 0;  
+        var number = Number(document.getElementById("pallindromValue").value);  
+        tempValue = number;  
+        while (number!= 0)  
+        {  
+            sum = sum*10+number%10; 
+            number = parseInt(number/10);   
+        }  
+        if (sum == tempValue)  
+        {  
+            let y = "It is a Palindrome Number";
+            document.getElementById("resultpallindrom").innerHTML = y;  
+        }  
+        else  
+        {  
+       let y = "It is not a Palindrome Number";
+        document.getElementById("resultpallindrom").innerHTML = y;  
+        }    
+    }
+
+// WAP to Count frequency of each element arr={2,2,3,4,5,6,6,6,6,9,3}  
+    let arr = [2,2,3,4,5,6,6,6,6,9,3];
+    // sorting the array 
+    arr.sort();
+    let count = 1 
+    for(let i = 1;i<arr.length; i++){
+        if(arr[i] == arr[i-1]) {
+            count++;
+        }
+        else {
+            document.write("The frequency of "+ arr[i-1] + " is: " + count);
+            document.write("<br>");
+            count = 1;
+        }
+    }
+    document.write("The frequency of "+ arr[arr.length-1] + " is: " + count);
+
+    //================================
+// By creating another function under a function , make a program to create access the value of both the functions. 
+const myobject = {
+    myname:'niraj',
+    outerFunction(){
+        const outerValue = 'Hello';
+
+        innerFunction=()=>{
+          const innerValue = 'World';
+          document.getElementById('resultfunction').innerHTML= (outerValue + ' ' + innerValue);//(outerValue + ' ' + innerValue);
+        }
+        innerFunction();
+      }
+    //  outerFunction();
+};
+myobject.outerFunction();
+//==================================
+
+studentDetails = (name, mobileNo, address) => {
+    this.name = name;
+    this.mobileNo = mobileNo;
+    this.address = address;
+    
+    displayDetails=()=>{
+    document.getElementById('resultThis').innerHTML=("Name: " + this.name+'<br>'+"Number: " + this.mobileNo+'<br>'+ "Address: " + this.address); 
+    }
+    
+    displayDetails();
+  } 
+  studentDetails("niraj", "8889495417", "mandsaur");
+
+</script>
+</html>
