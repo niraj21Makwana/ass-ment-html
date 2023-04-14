@@ -17,7 +17,7 @@
      flex-wrap: wrap;
  }
  
-@media (max-width:850px) {
+@media (max-width:850px) and (min-width: 300px) {
     .container{
         background-color: darksalmon;
          margin: 0 5% 0 5%;
@@ -32,24 +32,22 @@
     /* margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 30%; */
-    margin: 10px 0 10px 30%;
+    margin: 1% 0 1% 30%;
     width:40%;
     height: auto;
-    background-color: bisque;
+    background-color: bisque;;
     text-align: center;
     border: 2px dotted black;
     border-radius: 20px;
     flex-wrap: wrap;
 }
-@media (max-width:850px) {
+@media (max-width:850px) and (min-width: 300px){
     .heading{
         position: relative;
-        margin: 10px 0 10px 5%;
+        margin: 1% 0 1% 5%;
         width:90%;
         height: auto;
         text-align: center;
-        flex-wrap: wrap;
-        font-size: 2.1em;
     }
 }
 .secandpart{
@@ -61,9 +59,10 @@
 }
 .cardfirst{
     flex-basis: 27%;
+    /* width:27%; */
     background-color: bisque;
     margin: 2%;
-    max-width: 720px;
+    max-width: 72%;
     display: flex;
     flex-direction: column; 
     /* border: 1px solid rgb(238, 236, 236);
@@ -100,20 +99,8 @@
     margin: 10px 0 10px 0;
     font-size: 1.5em;
 }
-@media (max-width:950px){
-    .cardfirst{
-        flex-basis: 43%;
-        height: 300px;
-        background-color: bisque;
-        margin: 2%;
-        max-width: 720px;
-        display: flex;
-        flex-direction: column; 
-        border-radius: 2%;
-        padding: 10px;
-    }
-}
-@media (max-width:850px) {
+
+@media (max-width:850px)and (min-width: 300px){
     .cardfirst{
         flex-basis: 100%;
         height: 300px;
@@ -126,7 +113,7 @@
         padding: 10px;
     }
     .card-input{
-        /* width:100%; */
+        width:100%;
         height: 70px;
         margin: 10px 0 10px 0;
         text-align: center;
