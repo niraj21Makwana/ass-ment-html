@@ -133,3 +133,9 @@
         flex-wrap:wrap;
     }
 }
+.table-formating{
+    background-color: darksalmon;
+    color: white;
+   font-style: bold;
+    text-align: center;
+}
