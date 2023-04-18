@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ass-style.css">
 </head>
 
 <body>
@@ -53,20 +53,39 @@
             <h3 class="card-heading"> use 'This' Function</h3>
             <h4 class="card-result">Result : <p id="resultThis"></p></h4>
         </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">multiply every element in the array with 25</h3>
+            <h4 class="card-result">Result : <p id="resultElementArray"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">Data Using Rest Api map Method</h3>
+            <table id="getdata" class=""></table>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">multiply arrow function then pass that function into a variable using bind method.</h3>
+            <h4 class="card-result">Result : <p id="resultMultiply"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">sum function add 2 no.using bind method.</h3>
+            <h4 class="card-result">Result : <p id="resultSum"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">Printing the values using Object destructuring.</h3>
+            <h4 class="card-result">Result : <p id="resultObjectDestructuring"></p></h4>
+        </div>
+
+        <div class="cardfirst">
+            <h3 class="card-heading">Combine two array using Spread Operator.</h3>
+            <h4 class="card-result">Result : <p id="resultSpreadOperator"></p></h4>
+        </div>
     </div>
+    
 </div> 
-
-<!-- 
-        <h3>Question 2 create a button on clicking which its value is incremented by one using const and try to reassign the value.</h3>
-        <input type="text" id="forIncrement" placeholder="Enter the number For increment">
-        <button type="button" >Incremented</button>
-
-        <h3>Question 3 check given string is pallindrom or not using var.</h3>
-        <input type="text" id="pallindromValue" placeholder="Enter the number For increment">
-        <button type="button" onclick="pallindrom()">pallindrom</button>
-
-
-        <p id="result"></p> -->
 
     </div>
 </body>
@@ -113,7 +132,7 @@
     let arr = [2,2,3,4,5,6,6,6,6,9,3];
     // sorting the array 
     arr.sort();
-    let count = 1 
+    let count = 1;
     for(let i = 1;i<arr.length; i++){
         if(arr[i] == arr[i-1]) {
             count++;
@@ -126,7 +145,7 @@
     }
     document.write("The frequency of "+ arr[arr.length-1] + " is: " + count);
 
-    //================================
+//================================
 // By creating another function under a function , make a program to create access the value of both the functions. 
 const myobject = {
     myname:'niraj',
@@ -157,5 +176,78 @@ studentDetails = (name, mobileNo, address) => {
   } 
   studentDetails("niraj", "8889495417", "mandsaur");
 
+
+  //===================
+//  sum of two number using bind Method
+function add(a, b) {
+    return a + b;
+  }
+  // create a new function that always adds 5 to its argument
+  let add5 = add.bind(null, 5);
+ // console.log(add5(10)); // output: 15
+  //console.log(add5(20)); // output: 25
+  document.getElementById('resultSum').innerHTML = add5(20);
+
+
+//==================================
+//multiply arrow function then pass that function into a variable using bind method.
+  const multiply = (a, b) => a * b;
+  const multiplyByfive = multiply.bind(null, 5);
+  //console.log(multiplyByfive(10)); 
+  document.getElementById('resultMultiply').innerHTML = multiplyByfive(20);      
+
+//===================================
+//multiply every element in the array with 25
+const arr1 = [45, 76, 98, 22, 11];
+const multipliedArr = arr1.map((num) => num * 25);
+document.getElementById('resultElementArray').innerHTML = multipliedArr; 
+
+//=============================
+const apiUrl = "https://gorest.co.in/public/v2/users";
+      async function getApi(url){
+        const response = await fetch(url);
+        let data = await response.json();
+        console.log(data);
+        show(data);
+      }
+      getApi(apiUrl);
+      function show(data){
+        let tab =
+         `<tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Status</th>
+        </tr>`;
+        data.map((r)=>{
+            tab +=`<tr> 
+                    <td>${r.id}</td>   
+                    <td>${r.name}</td>   
+                    <td>${r.gender}</td>   
+                    <td>${r.status}</td>   
+                </tr>`;
+        })
+        //for (let r of data) {
+        //    tab += `<tr> 
+        //        <td>${r.id} </td>   
+        //        <td>${r.name} </td>   
+        //    </tr>`;
+        //}
+        document.getElementById('getdata').innerHTML = tab;
+      }
+//================================================================
+//{name: 'Arun', position: 'First', rollno: '24'} print the values using Object destructuring.
+const objectvar = {name: 'Arun', position: 'First', rollno: '24'};
+let {name,position,rollno} = objectvar;
+let printing = `Name is ${name} and position in class is ${position} and roll number is ${rollno}`;
+
+document.getElementById('resultObjectDestructuring').innerHTML = printing;
+//==============================================================
+//Combine two array using Spread Operator a=[1,2,3,4,5],b=[9,8,7,6,5].
+
+let a=[1,2,3,4,5];
+let b=[9,8,7,6,5];
+let all = [...a,...b];
+document.getElementById('resultSpreadOperator').innerHTML=all;
 </script>
 </html>
